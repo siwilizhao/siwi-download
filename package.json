@@ -1,0 +1,35 @@
+{
+  "name": "siwi-download",
+  "version": "1.0.0",
+  "description": "![image](https://github.com/siwilizhao/siwi-download/blob/master/storage/design/diagram.svg)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siwilizhao/siwi-download.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siwilizhao/siwi-download/issues"
+  },
+  "homepage": "https://github.com/siwilizhao/siwi-download#readme",
+  "dependencies": {
+    "siwi-datehelper": "^1.0.1",
+    "siwi-hash": "^1.0.2",
+    "siwi-ioredis": "^1.0.0",
+    "siwi-logger": "^1.0.9",
+    "siwi-request": "^2.0.0",
+    "siwi-uniquestring": "^1.0.4",
+    "siwi-wait": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.2"
+  }
+}
