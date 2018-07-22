@@ -13,7 +13,9 @@ const {
     MONITOR_SET_PHOTO_WAIT_DURATION,
     MONITOR_SET_VIDEO_WAIT_DURATION,
     ALIVE_REPORT_DURATION,
-    SERVICE_ALIVE_REPORT
+    SERVICE_ALIVE_REPORT,
+    CURRENT_PHOTO_TASKING,
+    CURRENT_VIDEO_TASKING
 } = require('./app/config')
 class Service {
     constructor() {
@@ -38,6 +40,7 @@ class Service {
                 const task = JSON.parse(json)
                 task['start'] = await utils.time()
                 const res = await photo.tasking(task)
+                await redis.set(CURRENT_PHOTO_TASKING,  JSON.stringify(task))
                 task['end'] = await utils.time()
                 if (res) {
                     await redis.lpush(DOWNLOAD_SUCCESS_LIST, JSON.stringify(task))
@@ -64,6 +67,7 @@ class Service {
             if (json) {
                 const task = JSON.parse(json)
                 task['start'] = await utils.time()
+                await redis.set(CURRENT_VIDEO_TASKING,  JSON.stringify(task))
                 const res = await video.tasking(task)
                 task['end'] = await utils.time()
                 if (res) {

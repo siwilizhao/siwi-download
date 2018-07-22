@@ -1,4 +1,4 @@
-const downloadM = require('../models/download')
+const request = require('../lib/request')
 const {
     DOWNLOAD_VIDEO_LIST
 } = require('../config')
@@ -9,7 +9,10 @@ class Photo {
     async tasking(task) {
         const title = task['title']
         const url = task['url']
-        await downloadM.getVideo()
+        const filename = `${task['title']}.mp4`
+        const filefullpath = `${save_path}/${filename}.jpg`
+        const result = await request.getFile(url, filefullpath)
+        return result
     }
 }
 module.exports = new Photo()
