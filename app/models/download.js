@@ -8,10 +8,10 @@ class Download {
 
     }
     async getPhoto(uri) {
-
+        await request.getFile(uri)
     }
     async getVideo(uri) {
-
+        await request.getFile(uri)
     }
 }
 

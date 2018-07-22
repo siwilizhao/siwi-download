@@ -7,6 +7,8 @@
 ```js
 const path = require('path')
 module.exports = {
+    REDIS_PORT: 6379,
+    REDIS_HOST: '127.0.0.1',
     DOWNLOAD_PHOTO_PATH: path.resolve('./storage/movies'),
     DOWNLOAD_VIDEO_PATH: path.resolve('/storage/photos')
 }
@@ -37,7 +39,9 @@ module.exports = {
     MONITOR_SET_PHOTO_WAIT_DURATION: 监控设置等待时长,
     LOGGER_LIST: REDIS日志队列,
     SERVICE_ALIVE_REPORT: 存活上报,
-    ALIVE_REPORT_DURATION: 存活上报间隔时间
+    ALIVE_REPORT_DURATION: 存活上报间隔时间,
+    REDIS_PORT: REDIS PORT,
+    REDIS_HOST: REDIS HOST,
 }
 ```
 
@@ -65,51 +69,63 @@ module.exports = {
 ### DOWNLOAD_PHOTO_LIST
 
 ```json
-    {
-        "title": "",
-        "url": ""
-    }
+{
+    "title": "",
+    "url": ""
+}
 ```
 
 ### CURRENT_PHOTO_TASKING
 
 ```json
-    {
-        "title": "",
-        "url": "",
-        "start": ""
-    }
+{
+    "title": "",
+    "url": "",
+    "start": ""
+}
 ```
 
 ### DOWNLOAD_SUCCESS_LIST
 
 ```json
-    {
-        "title": "",
-        "url": "",
-        "start": "",
-        "end": ""
-    }
+{
+    "title": "",
+    "url": "",
+    "start": "",
+    "end": ""
+}
 ```
 
 ### DOWNLOAD_FAIL_LIST
 
 ```json
-    {
-        "title": "",
-        "url": "",
-        "start": "",
-        "end": "",
-        "error":""
+{
+    "title": "",
+    "url": "",
+    "start": "",
+    "end": "",
+    "error":""
     }
 ```
 
 ### LOGGER_LIST
 
 ```json
-    {
-        "title": "",
-        "msg": "",
-        "date": "",
-    }
+{
+    "title": "",
+    "msg": "",
+    "date": "",
+}
+```
+
+## 运行
+
+```shell
+pm2 start pm2.yml
+```
+
+或者
+
+```shell
+node index.js
 ```

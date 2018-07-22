@@ -4,8 +4,8 @@ const {
 } = require('../config')
 const utils = require('../utils')
 const redis = require('../lib/redis')
-const instance = null
-const SiwiLogger = require('siwi-logger')
+
+let instance = null
 class Logger {
     constructor() {
         if (!instance) {
@@ -18,6 +18,7 @@ class Logger {
         const data = {
             title: SERVICE_NAME,
             msg: msg,
+            date: await utils.time()
         }
         await redis.lpush(LOGGER_LIST, JSON.stringify(data))
     }

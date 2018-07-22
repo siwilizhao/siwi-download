@@ -3,7 +3,6 @@ const redis = require('./app/lib/redis')
 const photo = require('./app/controllers/photo')
 const video = require('./app/controllers/video')
 const utils = require('./app/utils')
-const siwiLogger = require('siwi-logger')
 const logger = require('./app/models/logger')
 const {
     DOWNLOAD_PHOTO_LIST,
@@ -18,21 +17,9 @@ const {
 } = require('./app/config')
 class Service {
     constructor() {
-        this.init()
         this.photo()
         this.video()
-    }
-
-    /**
-     * init
-     */
-    async init() {
-        const options = {
-            path: `${process.env.PWD}/storage/logs`,
-            expire: 86400 * 7,
-            name: 'siwi-logger'
-        }
-        await siwiLogger.init(options)
+        this.report()
     }
 
     /**
@@ -57,7 +44,10 @@ class Service {
                 } else {
                     await redis.lpush(DOWNLOAD_FAIL_LIST, JSON.stringify(task))
                 }
-            } else {}
+            } else {
+                await logger.msg(`no photo task`)
+                await wait(COMMON_WAIT_DURATION * 1000)
+            }
         }
     }
     /**
