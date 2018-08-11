@@ -1,5 +1,5 @@
 {
-  "name": "siwi-download",
+  "name": "siwi-download-service",
   "version": "1.0.0",
   "description": "![image](https://github.com/siwilizhao/siwi-download/blob/master/storage/design/diagram.svg)",
   "main": "index.js",
