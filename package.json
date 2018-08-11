@@ -13,9 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/siwilizhao/siwi-download.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "download"
+  ],
+  "author": "siwil;izhao",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/siwilizhao/siwi-download/issues"
   },
