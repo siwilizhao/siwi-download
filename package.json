@@ -1,5 +1,5 @@
 {
-  "name": "siwi-download-service",
+  "name": "siwi-service-download",
   "version": "1.0.0",
   "description": "![image](https://github.com/siwilizhao/siwi-download/blob/master/storage/design/diagram.svg)",
   "main": "index.js",
@@ -13,12 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/siwilizhao/siwi-download.git"
   },
-  "keywords": [
-    "siwi",
-    "siwilizhao",
-    "siwi-download-service"
-  ],
-  "author": "siwilizhao",
+  "keywords": [],
+  "author": "siwi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/siwilizhao/siwi-download/issues"
